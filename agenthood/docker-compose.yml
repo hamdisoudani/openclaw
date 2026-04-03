@@ -42,7 +42,7 @@ services:
     build:
       context: ./worker
     env_file:
-      - .env
+      - .env.example
     depends_on:
       redis:
         condition: service_healthy
