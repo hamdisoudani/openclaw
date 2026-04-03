@@ -443,12 +443,12 @@ describe("shared Node TLS env defaults", () => {
     {
       name: "gateway service env",
       build: (env: Record<string, string | undefined>, platform?: NodeJS.Platform) =>
-        buildServiceEnvironment({ env, port: 18789, platform }),
+        buildServiceEnvironment({ env, port: 18789, platform, execPath: "/usr/bin/node" }),
     },
     {
       name: "node service env",
       build: (env: Record<string, string | undefined>, platform?: NodeJS.Platform) =>
-        buildNodeServiceEnvironment({ env, platform }),
+        buildNodeServiceEnvironment({ env, platform, execPath: "/usr/bin/node" }),
     },
   ] as const;
 
